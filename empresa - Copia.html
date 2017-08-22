@@ -4,10 +4,11 @@
 		<!-- Site made with Mobirise Website Builder v4.1.2, https://mobirise.com -->
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="generator" content="Mobirise v4.1.2, mobirise.com">
+		<!--<meta name="generator" content="Mobirise v4.1.2, mobirise.com">-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="assets/images/jk-novo-220x153.png" type="image/x-icon">
 		<meta name="description" content="Site Creator Description">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<title>Empresa</title>
 		<link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i">
@@ -20,6 +21,14 @@
 		<link href="assets/fonts/style.css" rel="stylesheet">
 		<link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 		<link rel="stylesheet" href="assets/Css/adinacss.css" type="text/css">
+		
+		<style type="text/css">
+			html { height: 100% }
+			body { height: 100%; margin: 0; padding: 0 }
+			.wrap { max-width: 95em; min-height: 20em; height:50%; width:100%; margin: 0 auto; padding-top: 2.5%;}
+			#map-canvas { height: 90%; width: 100%; }
+		</style>
+		
 	</head>
 	<body>
 		<section class="menu cid-qrcyZYYoLn" once="menu" id="menu1-q" data-rv-view="396">
@@ -337,39 +346,12 @@
 				</div>
 			</div>
 		</section>
-		<div class="mapa">
-			<img src="assets/images/empresa-mapa.jpg" width="1551px" height="503px"  alt="Mapa" />
-			<div class="apontador texto-a-direita" id="RJ">
-				<p>RJ</p>
-				<div class="detalhes">
-					<p class="pequeno">Estrada dos Bandeirantes, 20730<br />Vargem Pequena, CEP 22783-551</p>
-					<p class="grande">Rio de Janeiro</p>
-					<p>contato: +55(21) 2442-8282</p>
-					<p>vendas: +55(21) 2442-8250</p>
-					<p>fax: +55(21) 2442-8288</p>
-					<p>e-mail: <a href="mailto:vendas@adina.com.br">vendas@adina.com.br</a></p>
-				</div>
-			</div>
-			<div class="apontador texto-a-esquerda" id="SP">
-				<p>SP</p>
-				<div class="detalhes">
-					<p class="pequeno">Rua Anhaia, 1200<br />Bom Retiro, CEP 01130-000</p>
-					<p class="grande">São Paulo</p>
-					<p>contato: +55(11) 2813-8264</p>
-					<p>fax: +55(21) 2813-8282</p>
-					<p>e-mail: <a href="mailto:vendas.sp@adina.com.br">vendas.sp@adina.com.br</a></p>
-				</div>
-			</div>
-			<div class="apontador texto-a-esquerda" id="SC">
-				<p>SC</p>
-				<div class="detalhes">
-					<p class="pequeno">Rua Antonio Vitor Gonçalves, 300<br />Salseiros - Itajaí/SC</p>
-					<p class="grande">Centro de Distribuição</p>
-					<p>contato: +55(47) 3404-7100</p>
-					<p>e-mail: <a href="mailto:itajai@adina.com.br">itajai@adina.com.br</a></p>
-				</div>
-			</div>
+		
+		
+		<div class="wrap">
+			<div id="map-canvas"></div>
 		</div>
+		
 		<section class="cid-qsutuo4bKa" id="footer1-s" data-rv-view="404">
 
 			<div class="container">
@@ -448,6 +430,38 @@
 		<script src="assets/jquery-mb-vimeo_player/jquery.mb.vimeo_player.js"></script>
 		<script src="assets/theme/js/script.js"></script>
 		<script src="assets/mobirise-slider-video/script.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true">
+		</script>
+		<script type="text/javascript">
+			var map;
+			var centerPos = new google.maps.LatLng(-25.175074,-46.510273);
+			var zoomLevel =6;
+			function initialize() {
+				var mapOptions = {
+					center: centerPos,
+					zoom: zoomLevel
+				};
+				map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions );
+
+				var locations = [
+					['Adina SP', -23.520127, -46.647204],
+					['Adina RJ', -22.984213, -43.472251],
+					['Adina SC', -26.8772544, -48.7298776]
+
+				];
+
+				for (i = 0; i < locations.length; i++) {  
+					marker = new google.maps.Marker({
+						position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+						title: locations[i][0],
+						map: map
+					});
+				}
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+
+		
 
 
 	</body>
