@@ -808,7 +808,7 @@ pre {
 }
 .cid-qrcntJUY9X {
   padding-top: 90px;
-  padding-bottom: 90px;
+  padding-bottom: 9px;
   background-color: #ffffff;
 }
 .cid-qrcntJUY9X .card-img a {
@@ -840,10 +840,10 @@ pre {
   color: #767676;
 }
 .cid-qrcntJUY9X .card-wrapper {
-  padding-bottom: 2rem;
-  background: #ffffff;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-  transition: box-shadow 0.3s;
+    padding-bottom: 2rem;
+    background: #ffffff;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    transition: box-shadow 0.3s;
 }
 .cid-qrcntJUY9X .card-wrapper:hover {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);

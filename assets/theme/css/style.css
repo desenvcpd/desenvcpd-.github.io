@@ -151,7 +151,8 @@ section {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
+  margin-top: 100px;	 
+ -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-flex-wrap: wrap;
@@ -168,6 +169,7 @@ section {
   align-items: stretch; }
   .media-container-column > * {
     width: 100%; }
+ 
 
 @media (min-width: 992px) {
   .media-container-row {
@@ -252,7 +254,7 @@ nav .mbr-section-btn {
   min-height: 100vh; }
 
 .mbr-fullscreen {
-  display: flex;
+  
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
